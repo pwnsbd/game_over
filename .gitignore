@@ -1,0 +1,32 @@
+# Visual Studio cache and settings
+.vs/
+*.user
+*.suo
+
+# Build results
+Debug/
+Release/
+x64/
+bin/
+obj/
+ipch/
+
+# Compiled objects
+*.obj
+*.pch
+*.pdb
+*.idb
+*.ilk
+
+# VC project build files
+*.tlog
+*.log
+
+# Databases and caches
+*.VC.db
+*.opendb
+*.cache
+
+# Executables
+*.exe
+*.exe.recipe
