@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="dice_roller.cpp">
+    <ClCompile Include="guess_my_number.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
