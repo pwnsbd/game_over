@@ -8,15 +8,16 @@
 #include <ctime>
 
 using namespace std;
+vector<string> assignWords(vector<string> wordVec);
+char userGuess();
 
 int main()
 {
 	const int MAX_WRONG = 8;
 
 	vector<string> words;
-	words.push_back("AMAZING");
-	words.push_back("JAPANESE");
-	words.push_back("GAMERS");
+	words = assignWords(words);
+	
 
 	srand(static_cast<unsigned int>(time(0)));
 	random_shuffle(words.begin(), words.end());
@@ -31,24 +32,20 @@ int main()
 	while ((wrong < MAX_WRONG) && (soFAR != THE_WORD))
 	{
 		cout << "\nYou tried " << wrong << " moves.";
-		cout << "\nRemain moves left" << (MAX_WRONG - wrong) << ":)";
+		cout << "\nRemain moves left " << (MAX_WRONG - wrong) << ":)";
 		cout << "\nLetter used : ";
 		for (auto use : used)
 		{
 			cout << use;
 		}
 		cout << "\nThe word so far : " << soFAR << endl;
-		cout << "Whats your guess ? ";
 		char guess;
-		cin >> guess;
-		guess = toupper(guess);
+		guess = userGuess();
 
 		while (used.find(guess) != string::npos)
 		{
 			cout << "You already have guessed " << guess << endl;
-			cout << "Whats your guess ? ";
-			cin >> guess;
-			guess = toupper(guess);
+			guess = userGuess();
 		}
 		
 		used += guess;
@@ -86,3 +83,17 @@ int main()
 	return 0;
 }
 
+vector<string> assignWords(vector<string> wordVec) {
+	wordVec.push_back("AMAZING");
+	wordVec.push_back("JAPANESE");
+	wordVec.push_back("GAMERS");
+	return wordVec;
+}
+
+char userGuess() {
+	char guess;
+	cout << "Whats your guess ? ";
+	cin >> guess;
+	guess = toupper(guess);
+	return guess;
+}
