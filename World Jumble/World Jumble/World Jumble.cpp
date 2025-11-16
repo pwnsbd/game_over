@@ -10,6 +10,7 @@ using namespace std;
 int main()
 {
     enum fields { WORD, HINT, NUM_FIELDS };
+    int score = 0;
     const int NUM_WORDS = 5;
     const string WORDS[NUM_WORDS][NUM_FIELDS] =
     {
@@ -52,6 +53,7 @@ int main()
     while ((guess != theWord) && (guess != "quit"))
     {
         if (guess == "hint") {
+            score -= -2;
             cout << theHint;
         }
         else {
@@ -63,10 +65,12 @@ int main()
     }
     if (guess == theWord)
     {
-        cout << "\n That's it! Your guessed it!\n";
+        score += 5;
+        cout << "\nThat's it! Your guessed it!\n";
+        cout << "\nYou scored : "<<  score  << " point for guessing;\n";
     }
 
-    cout << "Thank you for playing!";
+    cout << "Thank you for playing!\n";
 
 
     return 0;
