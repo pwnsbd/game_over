@@ -1,0 +1,13 @@
+Create an empty tic-tac-toe board
+Display the game instruction
+Determine who goes first
+While nobody has won and its not a tie
+	if its the human turns
+		Get the human moves
+		Update the board with the human move
+	else
+		generate a computer move
+		update the board with the move
+	Display the board
+	Swith turns
+Congratulate the winner or declare a tie

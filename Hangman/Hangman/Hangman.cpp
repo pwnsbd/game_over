@@ -9,7 +9,7 @@
 
 using namespace std;
 vector<string> assignWords(vector<string> wordVec);
-char userGuess();
+void userGuess(char &userGuess);
 
 int main()
 {
@@ -40,12 +40,12 @@ int main()
 		}
 		cout << "\nThe word so far : " << soFAR << endl;
 		char guess;
-		guess = userGuess();
+		userGuess(guess);
 
 		while (used.find(guess) != string::npos)
 		{
 			cout << "You already have guessed " << guess << endl;
-			guess = userGuess();
+			userGuess(guess);
 		}
 		
 		used += guess;
@@ -90,10 +90,9 @@ vector<string> assignWords(vector<string> wordVec) {
 	return wordVec;
 }
 
-char userGuess() {
-	char guess;
+void userGuess(char &guess) {
 	cout << "Whats your guess ? ";
 	cin >> guess;
 	guess = toupper(guess);
-	return guess;
+	return;
 }
